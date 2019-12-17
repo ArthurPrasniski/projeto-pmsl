@@ -4,7 +4,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="/aluno/criar">Cadastrar Alunos<span class="sr-only">(current)</span></a>
                 </li>
@@ -18,8 +18,8 @@
                     <a class="nav-link" href="/turma">Consultar Turmas</a>
                 </li>
                 <li class="nav-item">
-                <a id="navbarDropdown" class="nav-link" href="{{url('logout')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Logout
-                </a>
+                    <a id="navbarDropdown" class="nav-link" href="{{url('logout')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Logout
+                    </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item"  href="{{ route('logout') }}"
                            onclick="event.preventDefault();

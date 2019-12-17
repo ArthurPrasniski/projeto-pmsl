@@ -57,10 +57,13 @@ class TurmaController extends Controller
         $alunoturma->aluno_id = $id;
         $alunoturma->turma_id = $idturma;
         $alunoturma->save();
+
+        return redirect()->route('turma.index');
     }
         public function veralunos($id)
     {
         $alunos = Aluno_turma::where('turma_id', $id)->get();
+        // dd($alunos);
         return view('Turma.listaAlunosdeterminadaTurma', compact('alunos'));
     }
     /**
