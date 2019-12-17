@@ -1,4 +1,4 @@
 ## Senha e login para o sistema
 
-login: admin <br>
+login: admin@mail.com <br>
 senha: 12345678
