@@ -20,12 +20,14 @@
                 <td>{{$turma->vagas}}</td>
                 <td>{{$turma->professor}}</td>
                 <td>
+                    @if(auth()->user()->nivel >=2)
                     <a href="{{route('turma.adicionaralunos', $turma->id)}}" type="button"
                         class="btn btn-primary">Cadastrar</a>
-                    <a href="{{route('turma.veraluno', $turma->id)}}" type="button" class="btn btn-primary">Ver
-                        Alunos</a>
                     <a href="{{route('turma.editarturma',$turma->id)}}" type="button" class="btn btn-primary">Editar</a>
                     <a href="{{route('turma.delete',$turma->id)}}" type="button" class="btn btn-danger">Excluir</a>
+                    @endif
+                    <a href="{{route('turma.veraluno', $turma->id)}}" type="button" class="btn btn-primary">Ver
+                        Alunos</a>
                 </td>
             </tr>
             @endforeach
