@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Aluno;
 use App\Aluno_turma;
+use App\Http\Requests\ValidacaoTurma;
 use App\Turma;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,7 @@ class TurmaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidacaoTurma $request)
     {
         $turma = new Turma();
         //dd($request);
@@ -46,12 +47,12 @@ class TurmaController extends Controller
         $turma->save();
         return redirect()->route('turma.index');
     }
-        public function listaalunos($id)
+    public function listaalunos($id)
     {
         $alunos = Aluno::all();
-        return view('Turma.adicionaralunos', compact('alunos','id'));
+        return view('Turma.adicionaralunos', compact('alunos', 'id'));
     }
-        public function alunoturma($id,$idturma)
+    public function alunoturma($id, $idturma)
     {
         $alunoturma = new Aluno_turma();
         $alunoturma->aluno_id = $id;
@@ -60,7 +61,7 @@ class TurmaController extends Controller
 
         return redirect()->route('turma.index');
     }
-        public function veralunos($id)
+    public function veralunos($id)
     {
         $alunos = Aluno_turma::where('turma_id', $id)->get();
         // dd($alunos);
@@ -96,17 +97,17 @@ class TurmaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ValidacaoTurma $request, $id)
     {
 
-          $editado = Turma::find($id);
-          $editado->descricao = $request->input('descricao');
-          $editado->vagas = $request->input('vagas');
-          $editado->professor = $request->input('professor');
-          $editado->update();
-          //dd($editado);
+        $editado = Turma::find($id);
+        $editado->descricao = $request->input('descricao');
+        $editado->vagas = $request->input('vagas');
+        $editado->professor = $request->input('professor');
+        $editado->update();
+        //dd($editado);
 
-          return redirect()->route('turma.index');
+        return redirect()->route('turma.index');
     }
 
     /**

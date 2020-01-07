@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Aluno;
+use App\Http\Requests\ValidacaoAluno;
 use Illuminate\Http\Request;
 
 class AlunoController extends Controller
@@ -36,9 +37,9 @@ class AlunoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidacaoAluno $request)
     {
-        $aluno=new Aluno();
+        $aluno = new Aluno();
         //dd($request);
         $aluno->nome = $request->input('nome');
         $aluno->datadenascimento = $request->input('date');
@@ -83,21 +84,21 @@ class AlunoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ValidacaoAluno $request, $id)
     {
 
-          $editado = Aluno::find($id);
-          $editado->nome = $request->input('nome');
-          $editado->datadenascimento = $request->input('date');
-          $editado->sexo = $request->input('sexo');
-          $editado->cidade = $request->input('cidade');
-          $editado->bairro = $request->input('bairro');
-          $editado->rua = $request->input('rua');
-          $editado->numero = $request->input('numero');
-          $editado->complemento = $request->input('complemento');
-          $editado->update();
-          //dd($editado);
-          return redirect()->route('aluno.index');
+        $editado = Aluno::find($id);
+        $editado->nome = $request->input('nome');
+        $editado->datadenascimento = $request->input('date');
+        $editado->sexo = $request->input('sexo');
+        $editado->cidade = $request->input('cidade');
+        $editado->bairro = $request->input('bairro');
+        $editado->rua = $request->input('rua');
+        $editado->numero = $request->input('numero');
+        $editado->complemento = $request->input('complemento');
+        $editado->update();
+        //dd($editado);
+        return redirect()->route('aluno.index');
     }
 
     /**

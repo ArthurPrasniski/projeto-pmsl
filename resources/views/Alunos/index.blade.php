@@ -28,8 +28,10 @@
                 <td>{{$aluno->numero}}</td>
                 <td>{{$aluno->complemento}}</td>
                 <td>
+                    @if(auth()->user()->nivel >=2)
                     <a href="{{route('aluno.editaraluno',$aluno->id)}}" type="button" class="btn btn-primary">Editar</a>
                     <a href="{{route('aluno.delete',$aluno->id)}}" type="button" class="btn btn-danger">Excluir</a>
+                    @endif
                 </td>
             </tr>
             @endforeach
