@@ -130,6 +130,6 @@ class TurmaController extends Controller
         $turma = Turma::all();
 
         $pdf = \PDF::loadView('pdfturma', compact('turma'));
-        return $pdf->stream('.pdf');
+        return $pdf->download('turma.pdf');
     }
 }

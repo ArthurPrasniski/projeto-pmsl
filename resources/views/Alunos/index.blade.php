@@ -35,6 +35,7 @@
                 </td>
             </tr>
             @endforeach
+            <a href="pdfaluno" type="button" class="btn btn-primary">Relátorio</a>
         </tbody>
     </table>
 </div>

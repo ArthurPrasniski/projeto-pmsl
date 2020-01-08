@@ -11,24 +11,25 @@
 </head>
 
 <body>
-    <table class="table table-bordered">
-        <thead>
-            <tr class="active" class="table-primary">
-                <td width="25%">Descrição</td>
-                <td width="25%">Vagas</td>
-                <td width="25%">Professor</td>
-            </tr>
-        </thead>
-        <Tbody>
-            @foreach ($turma as $class)
-            <tr>
-                <td>{{$class->descricao}}</td>
-                <td>{{$class->vagas}}</td>
-                <td>{{$class->professor}}</td>
-            </tr>
-            @endforeach
-        </Tbody>
-    </table>
+    <!–– -- logo prefeitura -- <img src="saoleo2.png" width=60 height=80>
+        <table class="table table-striped">
+            <thead>
+                <tr class="table-primary info">
+                    <td>Descrição</td>
+                    <td>Vagas</td>
+                    <td>Professor</td>
+                </tr>
+            </thead>
+            <Tbody>
+                @foreach ($turma as $class)
+                <tr>
+                    <td>{{$class->descricao}}</td>
+                    <td>{{$class->vagas}}</td>
+                    <td>{{$class->professor}}</td>
+                </tr>
+                @endforeach
+            </Tbody>
+        </table>
 </body>
 
 </html>

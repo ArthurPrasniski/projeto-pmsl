@@ -11,35 +11,35 @@
 </head>
 
 <body>
-    <img src="saoleo2.png" width=60 height=80>
-    <table class="table table-striped">
-        <thead>
-            <tr class="table-primary info">
-                <td>Nome</td>
-                <td>Sexo</td>
-                <td>Data de Nascimento</td>
-                <td>Cidade</td>
-                <td>Bairro</td>
-                <td>Rua</td>
-                <td>Número</td>
-                <td>Complemento</td>
-            </tr>
-        </thead>
-        <Tbody>
-            @foreach ($aluno as $alun)
-            <tr>
-                <td>{{$alun->nome}}</td>
-                <td>{{$alun->sexo}}</td>
-                <td>{{$alun->datadenascimento}}</td>
-                <td>{{$alun->cidade}}</td>
-                <td>{{$alun->bairro}}</td>
-                <td>{{$alun->rua}}</td>
-                <td>{{$alun->numero}}</td>
-                <td>{{$alun->complemento}}</td>
-            </tr>
-            @endforeach
-        </Tbody>
-    </table>
+    <!–– -- logo prefeitura -- <img src="saoleo2.png" width=60 height=80>
+        <table class="table table-striped">
+            <thead>
+                <tr class="table-primary info">
+                    <td>Nome</td>
+                    <td>Sexo</td>
+                    <td>Data de Nascimento</td>
+                    <td>Cidade</td>
+                    <td>Bairro</td>
+                    <td>Rua</td>
+                    <td>Número</td>
+                    <td>Complemento</td>
+                </tr>
+            </thead>
+            <Tbody>
+                @foreach ($aluno as $alun)
+                <tr>
+                    <td>{{$alun->nome}}</td>
+                    <td>{{$alun->sexo}}</td>
+                    <td>{{$alun->datadenascimento}}</td>
+                    <td>{{$alun->cidade}}</td>
+                    <td>{{$alun->bairro}}</td>
+                    <td>{{$alun->rua}}</td>
+                    <td>{{$alun->numero}}</td>
+                    <td>{{$alun->complemento}}</td>
+                </tr>
+                @endforeach
+            </Tbody>
+        </table>
 </body>
 
 </html>

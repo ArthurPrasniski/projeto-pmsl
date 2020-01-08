@@ -31,6 +31,7 @@
                 </td>
             </tr>
             @endforeach
+            <a href="pdfturma" type="button" class="btn btn-primary">Relátorio</a>
         </tbody>
     </table>
 </div>

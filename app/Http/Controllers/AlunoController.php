@@ -120,6 +120,6 @@ class AlunoController extends Controller
         $aluno = Aluno::all();
 
         $pdf = \PDF::loadView('pdfaluno', compact('aluno'));
-        return $pdf->stream('.pdf');
+        return $pdf->download('alunos.pdf');
     }
 }
