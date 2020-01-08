@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
 use App\Aluno;
 use App\Http\Requests\ValidacaoAluno;
 use Illuminate\Http\Request;
@@ -51,6 +52,7 @@ class AlunoController extends Controller
         $aluno->complemento = $request->input('complemento');
         $aluno->save();
 
+        Alert::success('cadastrado com sucesso', );
         return redirect()->route('aluno.index');
     }
 
@@ -112,5 +114,12 @@ class AlunoController extends Controller
         $delete = Aluno::find($id);
         $delete->delete();
         return redirect()->route('aluno.index');
+    }
+    public function pdf()
+    {
+        $aluno = Aluno::all();
+
+        $pdf = \PDF::loadView('pdfaluno', compact('aluno'));
+        return $pdf->stream('.pdf');
     }
 }

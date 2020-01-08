@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,8 +9,6 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
-
-use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {return view('welcome');})->middleware('auth');
 
@@ -32,6 +29,8 @@ Route::get('/turmas/delete/{id}', 'TurmaController@destroy')->name('turma.delete
 Route::get('/alunos/delete/{id}', 'AlunoController@destroy')->name('aluno.delete')->middleware('auth');
 Route::get('/registrar', 'UsuarioController@create')->name('usuario.create')->middleware('auth')->middleware('usuarioti');
 Route::post('/registrar/salvar', 'UsuarioController@store')->name('usuario.store')->middleware('auth')->middleware('usuarioti');
+Route::get('/pdfturma', 'TurmaController@pdf');
+Route::get('/pdfaluno', 'AlunoController@pdf');
 
 Route::get('/logout', function () {
     Auth::logout();

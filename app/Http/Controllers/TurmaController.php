@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
 use App\Aluno;
 use App\Aluno_turma;
 use App\Http\Requests\ValidacaoTurma;
@@ -45,6 +46,8 @@ class TurmaController extends Controller
         $turma->vagas = $request->input('vagas');
         $turma->professor = $request->input('professor');
         $turma->save();
+
+        Alert::success('cadastrado com sucesso', );
         return redirect()->route('turma.index');
     }
     public function listaalunos($id)
@@ -58,7 +61,7 @@ class TurmaController extends Controller
         $alunoturma->aluno_id = $id;
         $alunoturma->turma_id = $idturma;
         $alunoturma->save();
-
+        Alert::success('Adicionado');
         return redirect()->route('turma.index');
     }
     public function veralunos($id)
@@ -121,5 +124,12 @@ class TurmaController extends Controller
         $delete = Turma::find($id);
         $delete->delete();
         return redirect()->route('turma.index');
+    }
+    public function pdf()
+    {
+        $turma = Turma::all();
+
+        $pdf = \PDF::loadView('pdfturma', compact('turma'));
+        return $pdf->stream('.pdf');
     }
 }

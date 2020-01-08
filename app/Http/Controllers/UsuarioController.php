@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ValidacaoAluno;
+use Alert;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -46,8 +46,8 @@ class UsuarioController extends Controller
         $usuario->password = $request->input('password');
         $usuario->nivel = $request->input('nivel');
         $usuario->save();
-
-        return redirect()->route('#');
+        Alert::success('cadastrado com sucesso', );
+        return redirect()->route('usuario.create');
     }
 
     /**
@@ -94,4 +94,5 @@ class UsuarioController extends Controller
     {
         //
     }
+
 }
