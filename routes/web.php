@@ -32,6 +32,7 @@ Route::get('/registrar', 'UsuarioController@create')->name('usuario.create')->mi
 Route::post('/registrar/salvar', 'UsuarioController@store')->name('usuario.store')->middleware('auth')->middleware('usuarioti');
 Route::get('/pdfturma', 'TurmaController@pdf')->name('turma.pdf');
 Route::get('/pdfaluno', 'AlunoController@pdf')->name('aluno.pdf');
+Route::get('/audicao', 'AuditController@index')->name('audit.index')->middleware('auth')->middleware('usuarioti');
 
 Route::get('/logout', function () {
     Auth::logout();

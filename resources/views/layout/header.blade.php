@@ -19,7 +19,10 @@
                 <a class="nav-link" href="/turma">Consultar Turmas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/registrar">Registrar Novo Usuário</a>
+                <a class="nav-link" href="/audicao">Relatório de Mudanças</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/registrar">Registrar</a>
             </li>
             <li class="nav-item">
                 <a id="navbarDropdown" class="nav-link" href="{{url('logout')}}" role="button" data-toggle="dropdown"
