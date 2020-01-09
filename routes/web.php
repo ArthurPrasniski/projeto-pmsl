@@ -21,6 +21,7 @@ Route::post('/turma/salvar', 'TurmaController@store')->name('turma.store')->midd
 Route::get('/turma/{id}', 'TurmaController@listaalunos')->name('turma.adicionaralunos')->middleware('auth');
 Route::get('/turma/{id}/{idturma}', 'TurmaController@alunoturma')->name('turma.salvaraluno')->middleware('auth');
 Route::get('/turma/ver/alunos/{id}', 'TurmaController@veralunos')->name('turma.veraluno')->middleware('auth');
+Route::get('/turma/ver/alunos/delete/{id}', 'TurmaController@delete')->name('turma.deletaraluno')->middleware('auth');
 Route::get('/turmas/editar/{id}', 'TurmaController@edit')->name('turma.editarturma')->middleware('auth');
 Route::get('/aluno/editar/{id}', 'AlunoController@edit')->name('aluno.editaraluno')->middleware('auth');
 Route::post('/turmas/update/{id}', 'TurmaController@update')->name('turma.salvarturma')->middleware('auth');

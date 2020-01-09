@@ -9,6 +9,7 @@
                 <th>Nome</th>
                 <th>Sexo</th>
                 <th>Data de Nascimento</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody align="center" id="teste">
@@ -18,7 +19,10 @@
                 <td>{{$aluno->aluno->nome}}</td>
                 <td>{{$aluno->aluno->sexo}}</td>
                 <td>{{$aluno->aluno->datadenascimento}}</td>
+                <td><a href="{{route('turma.deletaraluno',$aluno->id)}}" type="button"
+                        class="btn btn-danger">Excluir</a></td>
             </tr>
+
             @endforeach
         </tbody>
     </table>

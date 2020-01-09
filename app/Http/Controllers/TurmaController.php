@@ -132,4 +132,11 @@ class TurmaController extends Controller
         $pdf = \PDF::loadView('pdfturma', compact('turma'));
         return $pdf->download('turma.pdf');
     }
+
+    public function delete($id)
+    {
+        $delete = Aluno_turma::find($id);
+        $delete->delete();
+        return redirect()->route('turma.index');
+    }
 }

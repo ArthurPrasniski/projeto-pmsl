@@ -1,7 +1,7 @@
 @extends('layout.principal')
 @section('conteudo')
 <div class="container-fluid no-padding table-responsive-sm">
-    <h3 align="center" style="padding-top: 10px"> Lista das Turmas </h3>
+    <h2 align="center" style="padding-top: 20px"> Lista das Turmas </h2>
     <table id="tabelaaluno" class="table table-striped nowrap" style="width:100%">
         <thead>
             <tr class="table-primary">
@@ -22,12 +22,13 @@
                 <td>
                     @if(auth()->user()->nivel >=2)
                     <a href="{{route('turma.adicionaralunos', $turma->id)}}" type="button"
-                        class="btn btn-primary">Cadastrar</a>
+                        class="btn btn-primary">Cadastrar Aluno</a>
+                    <a href="{{route('turma.veraluno', $turma->id)}}" type="button" class="btn btn-primary">Ver
+                        Alunos</a>
                     <a href="{{route('turma.editarturma',$turma->id)}}" type="button" class="btn btn-primary">Editar</a>
                     <a href="{{route('turma.delete',$turma->id)}}" type="button" class="btn btn-danger">Excluir</a>
                     @endif
-                    <a href="{{route('turma.veraluno', $turma->id)}}" type="button" class="btn btn-primary">Ver
-                        Alunos</a>
+
                 </td>
             </tr>
             @endforeach
