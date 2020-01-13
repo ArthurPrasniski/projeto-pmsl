@@ -2,7 +2,8 @@
 @section('conteudo')
 
 <div class="container">
-    <h3>Cadastro de Aluno</h3><br>
+    <br>
+    <h4>Cadastro de Usuário</h4><br>
     <form method="post" action="{{route('usuario.store')}}">
         @csrf
         <div class="form-group row">
@@ -77,5 +78,8 @@
         </div>
     </form>
 </div>
+<!-- Laravel Javascript Validation -->
+<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 
+{!! JsValidator::formRequest('App\Http\Requests\ValidacaoAluno') !!}
 @endsection

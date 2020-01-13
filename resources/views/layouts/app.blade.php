@@ -16,19 +16,18 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'PMSL') }}
+                <a class="navbar-brand" href="{{ url('/') }}"> PMSL
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -47,7 +46,7 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('') }}</a>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
