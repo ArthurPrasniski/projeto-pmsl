@@ -8,22 +8,22 @@
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/aluno/criar">Cadastrar Alunos</a>
+                <a class="nav-link" href="{{route('aluno.create')}}">Cadastrar Alunos</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/turma/criar">Cadastrar Turmas</a>
+                <a class="nav-link" href="{{route('turma.create')}}">Cadastrar Turmas</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/aluno">Consultar Alunos</a>
+                <a class="nav-link" href="{{ route('aluno.index')}}">Consultar Alunos</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('turma.veraluno') }}">Consultar Turmas</a>
+                <a class="nav-link" href="{{ route('turma.index') }}">Consultar Turmas</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('audit.index') }}">Relatório de Mudanças</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/registrar">Registrar Usuário</a>
+                <a class="nav-link" href="{{ route('usuario.create') }}">Registrar Usuário</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" action="{{ route('logout') }}" method="POST">
