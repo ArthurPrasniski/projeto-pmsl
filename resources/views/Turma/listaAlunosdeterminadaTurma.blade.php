@@ -1,6 +1,6 @@
 @extends('layout.principal')
 @section('conteudo')
-<div class="container-fluid no-padding table-responsive-sm">
+{{--<div class="container-fluid no-padding table-responsive-sm">
     <h3 align="center" style="padding-top: 10px"> Lista das Turmas </h3>
     <table id="tabelaaluno" class="table table-striped nowrap" style="width:100%">
         <thead>
@@ -16,17 +16,52 @@
             @foreach($alunos as $aluno)
             <tr>
                 <td>{{$aluno->aluno->id}}</td>
-                <td>{{$aluno->aluno->nome}}</td>
-                <td>{{$aluno->aluno->sexo}}</td>
-                <td>{{$aluno->aluno->datadenascimento}}</td>
-                <td><a href="{{route('turma.deletaraluno',$aluno->id)}}" type="button"
-                        class="btn btn-danger">Excluir</a></td>
-            </tr>
+<td>{{$aluno->aluno->nome}}</td>
+<td>{{$aluno->aluno->sexo}}</td>
+<td>{{$aluno->aluno->datadenascimento}}</td>
+<td><a href="{{route('turma.deletaraluno',$aluno->id)}}" type="button" class="btn btn-danger">Excluir</a></td>
+</tr>
 
-            @endforeach
-        </tbody>
-    </table>
-    </table>
+@endforeach
+</tbody>
+</table>
+</table>
+</div>--}}
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{__('Alunos')}}</h3>
+            </div>
+            <table class="table table-hover" id="dev-table">
+                <table id="tabelaaluno" class="table table-hover" style="width:100%">
+                    <thead class="thead-light">
+                        <tr class="table">
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Sexo</th>
+                            <th>Data de Nascimento</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody align="center" id="teste">
+                        @foreach($alunos as $aluno)
+                        <tr>
+                            <td>{{$aluno->aluno->id}}</td>
+                            <td>{{$aluno->aluno->nome}}</td>
+                            <td>{{$aluno->aluno->sexo}}</td>
+                            <td>{{$aluno->aluno->datadenascimento}}</td>
+                            <td><a href="{{route('turma.deletaraluno',$aluno->id)}}" type="button"
+                                    class="btn btn-danger">Excluir</a></td>
+                        </tr>
+
+                        @endforeach
+                    </tbody>
+                </table>
+            </table>
+        </div>
+    </div>
 </div>
 <script>
     $(document).ready(function () {

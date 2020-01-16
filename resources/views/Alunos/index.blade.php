@@ -1,6 +1,6 @@
 @extends('layout.principal')
 @section('conteudo')
-<div class="container-fluid no-padding table-responsive-sm">
+<div class="container-fluid no-padding table-responsive-sm rounded">
     <h3 align="center" style="padding-top: 10px">Lista de Alunos </h3>
     <table id="tabelaaluno" class="table table-striped nowrap" style="width:100%">
         <thead align="center">

@@ -5,32 +5,33 @@
     <h1>Cadastro de Turma</b></h1><br>
     <form method="post" action="{{ route('turma.store') }}">
         @csrf
+
         <div class="form-row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="descricao">Descrição da Turma: </label>
-                    <input type="text" class="form-control" id="descricao" placeholder="Descrição da Turma"
-                        name="descricao" required>
+            <label class="col-md-4 control-label">{{ __('Descrição da Turma') }}</label>
+            <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i
+                            class="glyphicon glyphicon-pencil"></i></span><input type="text" class="form-control"
+                        id="descricao" placeholder="Digite aqui a descrição" name="descricao" required>
                 </div>
             </div>
         </div>
 
         <div class="form-row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="vagas">Quantidade de Vagas</label>
-                    <input type="number" class="form-control" id="vagas" placeholder="Quantidade de Vagas" name="vagas"
-                        required>
+            <label class="col-md-4 control-label">{{ __('Quantidade de Vagas') }}</label>
+            <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i
+                            class="glyphicon glyphicon-pencil"></i></span><input type="number" class="form-control"
+                        id="vagas" placeholder="Digite aqui as vagas" name="vagas" required>
                 </div>
             </div>
         </div>
 
         <div class="form-row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="professor">Professor </label>
-                    <input type="text" class="form-control" id="professor" placeholder="Professor" name="professor"
-                        required>
+            <label class="col-md-4 control-label">{{ __('Professor Responsável') }}</label>
+            <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i
+                            class="glyphicon glyphicon-user"></i></span><input type="text" class="form-control"
+                        id="professor" placeholder="Digite o professor responsavel" name="professor" required>
                 </div>
             </div>
         </div>

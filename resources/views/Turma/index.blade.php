@@ -1,43 +1,50 @@
 @extends('layout.principal')
 @section('conteudo')
-<div class="container-fluid no-padding table-responsive-sm">
-    <h2 align="center" style="padding-top: 20px"> Lista das Turmas </h2>
-    <table id="tabelaaluno" class="table table-striped nowrap" style="width:100%">
-        <thead>
-            <tr class="table-primary">
-                <th>ID</th>
-                <th>Descrição</th>
-                <th>Vagas</th>
-                <th>Professor</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody align="center" id="teste">
-            @foreach($turmas as $turma)
-            <tr>
-                <td>{{$turma->id}}</td>
-                <td>{{$turma->descricao}}</td>
-                <td>{{$turma->vagas}}</td>
-                <td>{{$turma->professor}}</td>
-                <td>
-                    @if(auth()->user()->nivel >=2)
-                    <a href="{{route('turma.adicionaralunos', $turma->id)}}" type="button"
-                        class="btn btn-primary">Cadastrar Aluno</a>
-                    <a href="{{route('turma.veraluno', $turma->id)}}" type="button" class="btn btn-primary">Ver
-                        Alunos</a>
-                    <a href="{{route('turma.editarturma',$turma->id)}}" type="button" class="btn btn-primary">Editar</a>
-                    <a href="{{route('turma.delete',$turma->id)}}" type="button" class="btn btn-danger">Excluir</a>
-                    @endif
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{__('Turmas')}}</h3>
+            </div>
+            <table class="table table-hover" id="dev-table">
+                <table id="tabelaaluno" class="table table-striped nowrap" style="width:100%">
+                    <thead>
+                        <tr class="table-primary">
+                            <th>ID</th>
+                            <th>Descrição</th>
+                            <th>Vagas</th>
+                            <th>Professor</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody align="center" id="teste">
+                        @foreach($turmas as $turma)
+                        <tr>
+                            <td>{{$turma->id}}</td>
+                            <td>{{$turma->descricao}}</td>
+                            <td>{{$turma->vagas}}</td>
+                            <td>{{$turma->professor}}</td>
+                            <td>
+                                @if(auth()->user()->nivel >=2)
+                                <a href="{{route('turma.adicionaralunos', $turma->id)}}" type="button"
+                                    class="btn btn-primary">{{__('Cadastrar Aluno')}}</a>
+                                <a href="{{route('turma.veraluno', $turma->id)}}" type="button" class="btn btn-primary">
+                                    {{__('Ver Alunos')}}</a>
+                                <a href="{{route('turma.editarturma',$turma->id)}}" type="button"
+                                    class="btn btn-primary">{{__('Editar')}}</a>
+                                <a href="{{route('turma.delete',$turma->id)}}" type="button"
+                                    class="btn btn-danger">{{__('Excluir')}}</a>
+                                @endif
 
-                </td>
-            </tr>
-            @endforeach
-            <a href="pdfturma" type="button" class="btn btn-primary">Relátorio</a>
-        </tbody>
-    </table>
-</div>
-<script>
-    $(document).ready(function () {
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                    <a href="pdfturma" type="button" class="btn btn">Relátorio</a><br>
+                </table>
+        </div>
+        <script>
+            $(document).ready(function () {
             $('#tabelaaluno').DataTable({
                 select: false,
                 responsive: true,
@@ -78,5 +85,7 @@
                 }
             });
         });
-</script>
+        </script>
+    </div>
+</div>
 @endsection
