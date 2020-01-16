@@ -1,33 +1,38 @@
 @extends('layout.principal')
 @section('conteudo')
-<div class="container-fluid no-padding table-responsive-sm">
-    <h3 align="center" style="padding-top: 10px">Alunos Cadastrados </h3>
-    <table id="tabelaaluno" class="table table-striped nowrap" style="width:100%">
-        <thead>
-            <tr class="table-primary">
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Sexo</th>
-                <th>Data de Nascimento</th>
-                <th>Adicionar</th>
-            </tr>
-        </thead>
-        <tbody align="center" id="teste">
-            @foreach($alunos as $aluno)
-            <tr>
-                <td>{{$aluno->id}}</td>
-                <td>{{$aluno->nome}}</td>
-                <td>{{$aluno->sexo}}</td>
-                <td>{{$aluno->datadenascimento}}</td>
-                <td><a href="{{route('turma.salvaraluno',[$aluno->id,$id])}}" type="button"
-                        class="btn btn-primary">adicionar</a></td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
-<script>
-    $(document).ready(function () {
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{__('Alunos')}}</h3>
+            </div>
+            <table class="table table-hover" id="dev-table">
+                <table id="tabelaaluno" class="table table-striped nowrap" style="width:100%">
+                    <thead>
+                        <tr class="table-primary">
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Sexo</th>
+                            <th>Data de Nascimento</th>
+                            <th>Adicionar</th>
+                        </tr>
+                    </thead>
+                    <tbody align="center" id="teste">
+                        @foreach($alunos as $aluno)
+                        <tr>
+                            <td>{{$aluno->id}}</td>
+                            <td>{{$aluno->nome}}</td>
+                            <td>{{$aluno->sexo}}</td>
+                            <td>{{$aluno->datadenascimento}}</td>
+                            <td><a href="{{route('turma.salvaraluno',[$aluno->id,$id])}}" type="button"
+                                    class="btn btn-primary">adicionar</a></td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+        </div>
+        <script>
+            $(document).ready(function () {
             $('#tabelaaluno').DataTable({
                 select: false,
                 responsive: true,
@@ -68,5 +73,5 @@
                 }
             });
         });
-</script>
-@endsection
+        </script>
+        @endsection

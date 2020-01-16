@@ -1,46 +1,56 @@
 @extends('layout.principal')
 @section('conteudo')
-<div class="container-fluid no-padding table-responsive-sm rounded">
-    <h3 align="center" style="padding-top: 10px">Lista de Alunos </h3>
-    <table id="tabelaaluno" class="table table-striped nowrap" style="width:100%">
-        <thead align="center">
-            <tr class="table-primary">
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Sexo</th>
-                <th>Data de Nascimento</th>
-                <th>Cidade</th>
-                <th>Bairro</th>
-                <th>Número</th>
-                <th>Complemento</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody align="center" id="teste">
-            @foreach($alunos as $aluno)
-            <tr>
-                <td>{{$aluno->id}}</td>
-                <td>{{$aluno->nome}}</td>
-                <td>{{$aluno->sexo}}</td>
-                <td>{{$aluno->datadenascimento}}</td>
-                <td>{{$aluno->cidade}}</td>
-                <td>{{$aluno->bairro}}</td>
-                <td>{{$aluno->numero}}</td>
-                <td>{{$aluno->complemento}}</td>
-                <td>
-                    @if(auth()->user()->nivel >=2)
-                    <a href="{{route('aluno.editaraluno',$aluno->id)}}" type="button" class="btn btn-primary">Editar</a>
-                    <a href="{{route('aluno.delete',$aluno->id)}}" type="button" class="btn btn-danger">Excluir</a>
-                    @endif
-                </td>
-            </tr>
-            @endforeach
-            <a href="pdfaluno" type="button" class="btn btn-primary">Relátorio</a>
-        </tbody>
-    </table>
-</div>
-<script>
-    $(document).ready(function () {
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{__('Alunos')}}</h3>
+            </div>
+            <table class="table table-hover" id="dev-table">
+                <table id="tabelaaluno" class="table table-striped nowrap" style="width:100%">
+                    <thead>
+                        <table id="tabelaaluno" class="table table-striped nowrap" style="width:100%">
+                            <thead align="center">
+                                <tr class="table-primary">
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Sexo</th>
+                                    <th>Data de Nascimento</th>
+                                    <th>Cidade</th>
+                                    <th>Bairro</th>
+                                    <th>Número</th>
+                                    <th>Complemento</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody align="center" id="teste">
+                                @foreach($alunos as $aluno)
+                                <tr>
+                                    <td>{{$aluno->id}}</td>
+                                    <td>{{$aluno->nome}}</td>
+                                    <td>{{$aluno->sexo}}</td>
+                                    <td>{{$aluno->datadenascimento}}</td>
+                                    <td>{{$aluno->cidade}}</td>
+                                    <td>{{$aluno->bairro}}</td>
+                                    <td>{{$aluno->numero}}</td>
+                                    <td>{{$aluno->complemento}}</td>
+                                    <td>
+                                        @if(auth()->user()->nivel >=2)
+                                        <a href="{{route('aluno.editaraluno',$aluno->id)}}" type="button"
+                                            class="btn btn-primary">Editar</a>
+                                        <a href="{{route('aluno.delete',$aluno->id)}}" type="button"
+                                            class="btn btn-danger">Excluir</a>
+                                        @endif
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+
+                        </table>
+                        <a href="pdfaluno" type="button" class="btn btn-primary">Relátorio</a>
+        </div>
+        <script>
+            $(document).ready(function () {
         $('#tabelaaluno').DataTable({
             select: false,
             responsive: true,
@@ -81,5 +91,5 @@
             }
         });
     });
-</script>
-@endsection
+        </script>
+        @endsection

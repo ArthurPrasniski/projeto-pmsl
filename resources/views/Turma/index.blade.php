@@ -9,7 +9,7 @@
             <table class="table table-hover" id="dev-table">
                 <table id="tabelaaluno" class="table table-striped nowrap" style="width:100%">
                     <thead>
-                        <tr class="table-primary">
+                        <tr class="table tbale-sm table-light">
                             <th>ID</th>
                             <th>Descrição</th>
                             <th>Vagas</th>
@@ -40,8 +40,8 @@
                         </tr>
                         @endforeach
                     </tbody>
-                    <a href="pdfturma" type="button" class="btn btn">Relátorio</a><br>
                 </table>
+                <a href="pdfturma" type="button" class="btn btn-primary">Relátorio</a><br>
         </div>
         <script>
             $(document).ready(function () {
