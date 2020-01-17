@@ -1,7 +1,7 @@
 @extends('layout.principal')
 @section('conteudo')
 <div class="container-fluid no-padding table-responsive-sm">
-    <h3 align="center" style="padding-top: 10px">Alterações Realizadas </h3>
+    <h1 align="center" style="padding-top: 10px">Alterações Realizadas </h1>
     <table id="audicao" class="table table-striped nowrap" style="width:100%">
         <thead align="center">
             <tr class="table-primary">
